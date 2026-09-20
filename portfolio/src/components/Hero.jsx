@@ -2,7 +2,7 @@ import Link from "next/link";
 import HeroVisual from "@/components/HeroVisual";
 import Reveal from "@/components/Reveal";
 import { siteConfig } from "@/data/site-config";
-import { ArrowRightIcon } from "@/components/icons";
+import { ArrowRightIcon, ArrowUpRightIcon } from "@/components/icons";
 
 export default function Hero() {
   return (
@@ -11,41 +11,41 @@ export default function Hero() {
         <div className="lg:col-span-7">
           <Reveal>
             <p className="text-[13px] font-semibold tracking-[0.14em] text-shopify-dark">
-              SHOPIFY &middot; CRO &middot; eCOMMERCE TECHNOLOGY
+              SHOPIFY DEVELOPER &middot; eCOMMERCE ENGINEER
             </p>
           </Reveal>
 
           {/* Single H1 for the page */}
           <Reveal delay={80}>
             <h1 className="mt-5 max-w-xl text-[44px] font-bold leading-[1.06] tracking-tight text-ink sm:text-[58px] lg:text-[76px]">
-              Shopify Experiences Built to{" "}
-              <span className="text-shopify-dark">Convert</span>, Integrate &amp;
-              Scale.
+              I Build Shopify Stores That Are Built to{" "}
+              <span className="text-shopify-dark">Grow</span>.
             </h1>
           </Reveal>
 
           <Reveal delay={160}>
             <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-muted lg:text-[19px]">
-              I help DTC and eCommerce brands build faster, higher-converting
-              Shopify experiences, from custom storefronts and CRO to Klaviyo,
-              SAP, ERP and API integrations.
+              Shopify development, custom storefronts, CRO, performance
+              optimization &amp; third-party integrations, engineered for
+              modern eCommerce brands.
             </p>
           </Reveal>
 
           <Reveal delay={240}>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
               <Link
-                href="#contact"
+                href="#work"
                 className="group inline-flex items-center justify-center gap-2 rounded-lg bg-ink px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-shopify hover:text-forest"
               >
-                Start a Project
+                View My Work
                 <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <Link
-                href="#work"
-                className="inline-flex items-center justify-center rounded-lg border border-line px-6 py-3.5 text-[15px] font-semibold text-ink transition-colors hover:border-ink"
+                href="#contact"
+                className="group inline-flex items-center justify-center gap-2 rounded-lg border border-line px-6 py-3.5 text-[15px] font-semibold text-ink transition-colors hover:border-ink"
               >
-                View Selected Work
+                Let&rsquo;s Build Together
+                <ArrowUpRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
             </div>
           </Reveal>
