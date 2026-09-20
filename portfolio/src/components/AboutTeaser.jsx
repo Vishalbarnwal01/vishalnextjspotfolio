@@ -23,7 +23,7 @@ export default function AboutTeaser() {
           <div className="lg:col-span-7">
             <Reveal delay={100}>
               <p className="text-[22px] font-semibold leading-snug text-ink lg:text-[26px]">
-                I build commerce systems — not just storefronts.
+                I build commerce systems, not just storefronts.
               </p>
               <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
                 From conversion-focused Shopify themes to complex integrations, I

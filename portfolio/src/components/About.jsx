@@ -29,14 +29,14 @@ export default function About({ headingLevel = "h2" }) {
           <div className="lg:col-span-7">
             <Reveal delay={100}>
               <p className="text-[22px] font-semibold leading-snug text-ink lg:text-[28px]">
-                I build commerce systems — not just storefronts.
+                I build commerce systems, not just storefronts.
               </p>
               <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
                 From conversion-focused Shopify themes to complex integrations, I
                 combine development, UX, performance and eCommerce strategy to
                 create digital experiences that are built for real business
                 growth. I work at the intersection of eCommerce, technology and
-                conversion — designing around customer journeys and business
+                conversion, designing around customer journeys and business
                 operations, not just pages.
               </p>
             </Reveal>

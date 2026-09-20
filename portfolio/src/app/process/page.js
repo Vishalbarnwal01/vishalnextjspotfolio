@@ -5,7 +5,7 @@ import { siteConfig } from "@/data/site-config";
 export const metadata = {
   title: `Process | ${siteConfig.name}`,
   description:
-    "From discovery to scale — how Shopify projects get built: discover, strategize, build, optimize and scale.",
+    "From discovery to scale: how Shopify projects get built. Discover, strategize, build, optimize and scale.",
   alternates: { canonical: "/process" },
 };
 

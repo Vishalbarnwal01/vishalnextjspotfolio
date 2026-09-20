@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/data/site-config";
 import { MenuIcon, CloseIcon } from "@/components/icons";
 
@@ -33,12 +34,15 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-[1320px] items-center justify-between px-6 py-4 lg:px-10">
-        <Link
-          href="/"
-          className="text-[17px] font-semibold tracking-tight text-ink"
-        >
-          {siteConfig.name}
-          <span className="text-shopify">.</span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/vishal-logo.png"
+            alt={siteConfig.name}
+            width={140}
+            height={40}
+            className="h-10 w-auto object-contain"
+            priority
+          />
         </Link>
 
         <div className="hidden items-center gap-9 lg:flex">

@@ -5,7 +5,7 @@ import FinalCTA from "@/components/FinalCTA";
 import { siteConfig } from "@/data/site-config";
 
 export const metadata = {
-  title: `About | ${siteConfig.name} — Shopify Developer & eCommerce Solutions Provider`,
+  title: `About | ${siteConfig.name}: Shopify Developer & eCommerce Solutions Provider`,
   description:
     "An independent Shopify Developer and eCommerce Solutions Provider helping DTC and eCommerce brands build, optimize and scale their Shopify stores.",
   alternates: { canonical: "/about" },

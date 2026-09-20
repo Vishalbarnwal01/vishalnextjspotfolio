@@ -27,6 +27,6 @@ export const processSteps = [
     n: "05",
     title: "Scale",
     description:
-      "Continue improving the ecosystem — theme, integrations and infrastructure — as the business grows.",
+      "Continue improving the ecosystem (theme, integrations and infrastructure) as the business grows.",
   },
 ];

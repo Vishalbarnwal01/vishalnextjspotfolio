@@ -2,15 +2,15 @@
 export const faqs = [
   {
     q: "What does a Shopify developer do?",
-    a: "A Shopify developer designs, builds and maintains Shopify storefronts — custom themes, product and collection pages, checkout customization and app or API integrations — so a store performs well technically and converts visitors into customers.",
+    a: "A Shopify developer designs, builds and maintains Shopify storefronts, including custom themes, product and collection pages, checkout customization and app or API integrations, so a store performs well technically and converts visitors into customers.",
   },
   {
     q: "What is Shopify 2.0 theme development?",
-    a: "Shopify 2.0 is the current theme architecture built on JSON templates and reusable sections. It lets merchants customize almost any page without touching code, while developers build flexible, modular sections underneath — resulting in faster, more maintainable storefronts.",
+    a: "Shopify 2.0 is the current theme architecture built on JSON templates and reusable sections. It lets merchants customize almost any page without touching code, while developers build flexible, modular sections underneath, resulting in faster, more maintainable storefronts.",
   },
   {
     q: "Can you improve my Shopify conversion rate?",
-    a: "Yes. Shopify CRO work typically starts with a review of your PDP, PLP, cart and checkout flow, followed by UX and performance changes targeted at the specific friction points losing you customers — not generic best-practice templates.",
+    a: "Yes. Shopify CRO work typically starts with a review of your PDP, PLP, cart and checkout flow, followed by UX and performance changes targeted at the specific friction points losing you customers, not generic best-practice templates.",
   },
   {
     q: "Can you integrate Shopify with Klaviyo?",
@@ -18,7 +18,7 @@ export const faqs = [
   },
   {
     q: "Can Shopify be integrated with SAP or an ERP?",
-    a: "Yes. Shopify can be connected to SAP or another ERP system to sync product, inventory, order and customer data — either through existing connectors or a custom middleware integration built around your specific SAP setup.",
+    a: "Yes. Shopify can be connected to SAP or another ERP system to sync product, inventory, order and customer data, either through existing connectors or a custom middleware integration built around your specific SAP setup.",
   },
   {
     q: "Do you work with Shopify Plus?",
@@ -38,6 +38,6 @@ export const faqs = [
   },
   {
     q: "Do you provide ongoing Shopify development?",
-    a: "Yes. Beyond one-off builds, I work with brands on an ongoing basis — ship new features, run continuous CRO experiments and keep integrations and performance in good shape as the store grows.",
+    a: "Yes. Beyond one-off builds, I work with brands on an ongoing basis: shipping new features, running continuous CRO experiments and keeping integrations and performance in good shape as the store grows.",
   },
 ];

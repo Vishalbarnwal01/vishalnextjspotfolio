@@ -5,7 +5,7 @@ import { siteConfig } from "@/data/site-config";
 import { MailIcon, TargetIcon, LayersIcon } from "@/components/icons";
 
 export const metadata = {
-  title: `Contact | ${siteConfig.name} — Start a Shopify Project`,
+  title: `Contact | ${siteConfig.name}: Start a Shopify Project`,
   description:
     "Get in touch to start a Shopify development, CRO or integration project. Working remotely with US-based DTC and eCommerce brands.",
   alternates: { canonical: "/contact" },

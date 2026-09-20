@@ -1,17 +1,19 @@
 import Link from "next/link";
-import { blogPosts } from "@/data/blog-posts";
 import { siteConfig } from "@/data/site-config";
 import Reveal from "@/components/Reveal";
 import { ArrowRightIcon } from "@/components/icons";
+import { getBlogPosts } from "@/lib/blog";
 
 export const metadata = {
-  title: `Blog — Shopify Development & eCommerce Insights | ${siteConfig.name}`,
+  title: `Blog: Shopify Development & eCommerce Insights | ${siteConfig.name}`,
   description:
     "Notes on Shopify development, conversion rate optimization, Klaviyo and eCommerce integrations for DTC and growing online brands.",
   alternates: { canonical: "/blog" },
 };
 
-export default function BlogIndex() {
+export default async function BlogIndex() {
+  const blogPosts = await getBlogPosts();
+
   return (
     <section className="bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-[1000px] px-6 lg:px-10">
@@ -24,7 +26,7 @@ export default function BlogIndex() {
           </h1>
           <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
             Practical write-ups on Shopify development, CRO, Klaviyo and
-            eCommerce integrations — for founders and teams who want to
+            eCommerce integrations, for founders and teams who want to
             understand the &ldquo;why,&rdquo; not just the &ldquo;how.&rdquo;
           </p>
         </Reveal>
@@ -32,7 +34,7 @@ export default function BlogIndex() {
         <div className="mt-14 divide-y divide-line border-t border-line">
           {blogPosts.length === 0 && (
             <p className="py-12 text-[15px] text-muted">
-              No posts published yet — check back soon.
+              No posts published yet. Check back soon.
             </p>
           )}
 
@@ -44,15 +46,15 @@ export default function BlogIndex() {
               >
                 <div>
                   <div className="flex flex-wrap items-center gap-3 text-[12px] font-medium text-muted">
-                    <time dateTime={post.date}>
-                      {new Date(post.date).toLocaleDateString("en-US", {
+                    <time dateTime={post.published_at}>
+                      {new Date(post.published_at).toLocaleDateString("en-US", {
                         month: "long",
                         day: "numeric",
                         year: "numeric",
                       })}
                     </time>
                     <span>&middot;</span>
-                    <span>{post.readingTime}</span>
+                    <span>{post.reading_time}</span>
                   </div>
                   <h2 className="mt-2 text-[20px] font-semibold text-ink transition-colors group-hover:text-shopify-dark">
                     {post.title}

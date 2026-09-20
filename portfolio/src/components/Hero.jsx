@@ -27,7 +27,7 @@ export default function Hero() {
           <Reveal delay={160}>
             <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-muted lg:text-[19px]">
               I help DTC and eCommerce brands build faster, higher-converting
-              Shopify experiences — from custom storefronts and CRO to Klaviyo,
+              Shopify experiences, from custom storefronts and CRO to Klaviyo,
               SAP, ERP and API integrations.
             </p>
           </Reveal>

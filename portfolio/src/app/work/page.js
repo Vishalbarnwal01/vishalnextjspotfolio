@@ -1,6 +1,7 @@
 import CaseStudies from "@/components/CaseStudies";
 import FinalCTA from "@/components/FinalCTA";
 import { siteConfig } from "@/data/site-config";
+import { getProjects } from "@/lib/projects";
 
 export const metadata = {
   title: `Selected eCommerce Work | ${siteConfig.name}`,
@@ -9,10 +10,12 @@ export const metadata = {
   alternates: { canonical: "/work" },
 };
 
-export default function WorkPage() {
+export default async function WorkPage() {
+  const caseStudies = await getProjects();
+
   return (
     <main className="flex-1">
-      <CaseStudies headingLevel="h1" />
+      <CaseStudies caseStudies={caseStudies} headingLevel="h1" />
       <FinalCTA />
     </main>
   );

@@ -37,7 +37,7 @@ export default function Services({ headingLevel = "h2" }) {
               Everything Your Shopify Store Needs to Grow.
             </Heading>
             <p className="mt-5 text-[17px] leading-relaxed text-muted">
-              An eCommerce technology partner, not just a developer — covering
+              An eCommerce technology partner, not just a developer, covering
               Shopify development, conversion optimization and the integrations
               that connect your store to the rest of your business.
             </p>

@@ -1,16 +1,18 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { blogPosts } from "@/data/blog-posts";
+import { marked } from "marked";
 import { siteConfig } from "@/data/site-config";
+import { getBlogPost, getBlogPosts } from "@/lib/blog";
 
-// Pre-render every post at build time — new posts just need an entry in
-// src/data/blog-posts.js, no routing changes required.
-export function generateStaticParams() {
-  return blogPosts.map((post) => ({ slug: post.slug }));
+// New posts just need a row in the blog_posts Supabase table.
+export async function generateStaticParams() {
+  const posts = await getBlogPosts();
+  return posts.map((post) => ({ slug: post.slug }));
 }
 
-export function generateMetadata({ params }) {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const post = await getBlogPost(slug);
   if (!post) return {};
   return {
     title: `${post.title} | ${siteConfig.name}`,
@@ -20,13 +22,14 @@ export function generateMetadata({ params }) {
       title: post.title,
       description: post.excerpt,
       type: "article",
-      publishedTime: post.date,
+      publishedTime: post.published_at,
     },
   };
 }
 
-export default function BlogPost({ params }) {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+export default async function BlogPost({ params }) {
+  const { slug } = await params;
+  const post = await getBlogPost(slug);
   if (!post) return notFound();
 
   return (
@@ -40,15 +43,15 @@ export default function BlogPost({ params }) {
         </Link>
 
         <div className="mt-6 flex flex-wrap items-center gap-3 text-[12px] font-medium text-muted">
-          <time dateTime={post.date}>
-            {new Date(post.date).toLocaleDateString("en-US", {
+          <time dateTime={post.published_at}>
+            {new Date(post.published_at).toLocaleDateString("en-US", {
               month: "long",
               day: "numeric",
               year: "numeric",
             })}
           </time>
           <span>&middot;</span>
-          <span>{post.readingTime}</span>
+          <span>{post.reading_time}</span>
         </div>
 
         <h1 className="mt-4 text-[34px] font-bold leading-[1.15] tracking-tight text-ink lg:text-[44px]">
@@ -56,7 +59,7 @@ export default function BlogPost({ params }) {
         </h1>
 
         <div className="mt-4 flex flex-wrap gap-2">
-          {post.tags.map((tag) => (
+          {(post.tags || []).map((tag) => (
             <span
               key={tag}
               className="rounded-full border border-line bg-cream px-3 py-1 text-[12px] font-medium text-muted"
@@ -66,11 +69,19 @@ export default function BlogPost({ params }) {
           ))}
         </div>
 
-        <div className="mt-10 space-y-5 text-[17px] leading-relaxed text-ink/80">
-          {post.content.map((paragraph, i) => (
-            <p key={i}>{paragraph}</p>
-          ))}
-        </div>
+        {post.cover_image_url && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={post.cover_image_url}
+            alt={post.title}
+            className="mt-8 w-full rounded-2xl border border-line object-cover"
+          />
+        )}
+
+        <div
+          className="prose-content mt-10 text-[17px] leading-relaxed text-ink/80"
+          dangerouslySetInnerHTML={{ __html: marked.parse(post.content || "") }}
+        />
       </div>
     </article>
   );

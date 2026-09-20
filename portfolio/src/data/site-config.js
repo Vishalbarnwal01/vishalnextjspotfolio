@@ -12,9 +12,9 @@ export const siteConfig = {
 
   // Meta / SEO — edit these for real launch
   metaTitle:
-    "Vishal — Shopify Developer & eCommerce Solutions Provider for DTC Brands",
+    "Vishal, Shopify Developer & eCommerce Solutions Provider for DTC Brands",
   metaDescription:
-    "Independent Shopify Developer helping US-based DTC and eCommerce brands build, optimize and scale high-converting Shopify stores — custom themes, CRO, Klaviyo, SAP/ERP and API integrations.",
+    "Independent Shopify Developer helping US-based DTC and eCommerce brands build, optimize and scale high-converting Shopify stores: custom themes, CRO, Klaviyo, SAP/ERP and API integrations.",
   siteUrl: "https://www.yourdomain.com", // canonical URL — replace with your real domain
   ogImage: "/og-image.jpg", // 1200x630 — add this file to /public
 

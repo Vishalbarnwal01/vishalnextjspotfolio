@@ -1,13 +1,10 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import { caseStudies } from "@/data/case-studies";
 import { ArrowRightIcon } from "@/components/icons";
+import CaseStudyVisual from "@/components/CaseStudyVisual";
 
-const visualStyles = ["from-cream via-white to-shopify/10", "from-forest/5 via-white to-cream"];
-
-// Shows the first 2 of 4 case studies. Full set lives at /work.
-export default function WorkTeaser() {
-  const featured = caseStudies.slice(0, 2);
+export default function WorkTeaser({ featured = [] }) {
+  if (featured.length === 0) return null;
 
   return (
     <section className="bg-white py-24 lg:py-32">
@@ -39,19 +36,14 @@ export default function WorkTeaser() {
                 href="/work"
                 className="group block overflow-hidden rounded-2xl border border-line bg-white transition-shadow hover:shadow-[0_24px_60px_-30px_rgba(17,17,17,0.25)]"
               >
-                <div
-                  className={`relative aspect-[16/10] w-full overflow-hidden bg-gradient-to-br ${visualStyles[i % visualStyles.length]}`}
-                >
-                  <span className="absolute bottom-4 left-5 font-mono text-[56px] font-bold leading-none text-ink/5">
-                    0{i + 1}
-                  </span>
-                  <div className="absolute right-5 top-5 rounded-full border border-line bg-white/90 px-3 py-1 text-[11px] font-semibold text-shopify-dark backdrop-blur">
-                    {cs.industry}
-                  </div>
-                </div>
+                <CaseStudyVisual
+                  cs={cs}
+                  index={i}
+                  className="aspect-[16/10] rounded-none border-0 border-b border-line"
+                />
                 <div className="p-7">
                   <div className="flex flex-wrap gap-2">
-                    {cs.tags.map((tag) => (
+                    {(cs.tags || []).map((tag) => (
                       <span
                         key={tag}
                         className="rounded-full border border-line bg-cream px-3 py-1 text-[11px] font-medium text-muted"
