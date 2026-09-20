@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+/* =============================================================================
+   BRAND TOKENS — Shopify-inspired, predominantly white/off-white canvas.
+   Change these five values to re-skin the entire site.
+   ============================================================================= */
+:root {
+  --background: #ffffff;
+  --foreground: #111111;
+
+  --shopify: #95bf47; /* primary accent — CTAs, highlights, active states */
+  --shopify-dark: #7ca83a; /* hover state for accent */
+  --forest: #163300; /* deep section backgrounds (Process) */
+  --cream: #f7f8f5; /* off-white section backgrounds */
+  --ink: #111111; /* primary text */
+  --muted: #5f6658; /* secondary / muted text */
+  --line: #e5e9e0; /* borders, dividers */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-shopify: var(--shopify);
+  --color-shopify-dark: var(--shopify-dark);
+  --color-forest: var(--forest);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), "Inter", "Manrope", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--shopify);
+  color: var(--forest);
+}
+
+/* =============================================================================
+   MOTION — kept intentionally light: CSS transitions + one keyframe set.
+   ============================================================================= */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+@keyframes soft-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes flow-line {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-flow-line {
+  stroke-dasharray: 4 6;
+  animation: flow-line 1.2s linear infinite;
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float-y 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-soft-pulse,
+  .animate-flow-line,
+  .animate-float {
+    animation: none;
+  }
+}
